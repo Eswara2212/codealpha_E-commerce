@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Your Cart</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <header>
+    <h1>ShopX - Cart</h1>
+    <a href="/">← Back to Shop</a>
+  </header>
+
+  <main id="cart-items"></main>
+  <div id="total"></div>
+  <button onclick="checkout()">Place Order</button>
+
+  <script>
+    async function loadCart() {
+      const cart = JSON.parse(localStorage.getItem('cart')) || [];
+      const res = await fetch('http://lo
